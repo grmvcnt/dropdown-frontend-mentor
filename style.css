@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&display=swap');
+
+html, body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.filter{
+    display: none;
+
+    position: absolute;
+    z-index: 1;
+    background-color: hsl(0, 0%, 8%);
+    opacity: 50%;
+    width: 100%;
+    height: 100vh;
+}
+
+/*Header Part*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+    height: 64px;
+
+    padding-top: 16px;
+}
+
+.logo-and-nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo{
+    margin-left: 40px;
+    margin-right: 48px;
+    margin-top: 8px;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul{
+    padding: 0;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav > ul li{
+    margin-left: 24px;
+    margin-right: 24px;
+    color: hsl(0, 0%, 41%);
+}
+
+nav > ul li:hover{
+    color: hsl(0, 0%, 8%);
+}
+
+.arrow{
+    padding-left: 4px;
+    transition: transform 200ms ease-out 0.5s;
+}
+
+.dropdown-title:hover > .arrow{
+    padding-left: 4px;
+    transform: rotateX(180deg);
+    
+    transition: transform 200ms ease-in 0s;
+}
+
+.dropdown-content{
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 3;
+
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    transition: visibility 0.5s;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.dropdown-title:hover > .dropdown-content{
+    visibility: visible;
+}
+
+.dropdown-content-features{
+    top: 70px;
+    left: 130px;
+}
+
+.dropdown-content-company{
+    top: 70px;
+    left: 334px;
+}
+
+.dropdown-content > li{
+    margin: 16px;
+}
+
+.icon{
+    margin-left: 8px;
+    margin-right: 16px;
+}
+
+.login-and-register{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.register{
+    color: hsl(0, 0%, 41%);
+    border: 2px solid hsl(0, 0%, 41%);;
+    border-radius: 8px;
+    padding: 8px;
+
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.register:hover{
+    color: hsl(0, 0%, 8%);
+    border-color: hsl(0, 0%, 8%);
+}
+
+.login{
+    color: hsl(0, 0%, 41%);
+}
+
+.login:hover{
+    color: hsl(0, 0%, 8%);
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+/*Main Part*/
+main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100vw;
+    height: calc(100% - 80px);
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: none;
+    height: 80%;
+    width: 80%;
+
+    padding-top: 28px;
+}
+
+.left-part{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 50%;
+}
+
+.main-title{
+    margin-top: 90px;
+    width: 480px;
+    font-size: 72px;
+    font-weight: 700;
+}
+
+.main-paragraph{
+    width: 480px;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: hsl(0, 0%, 41%);
+}
+
+.learn-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    width: 140px;
+    height: 40px;
+
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    border-radius: 12px;
+    border: 2px solid hsl(0, 0%, 8%);
+}
+
+.learn-more:hover{
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(0, 0%, 8%);
+
+    cursor: pointer;
+}
+
+.clients{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 70%;
+    height: auto;
+}
+
+.client{
+    max-width: 100%;
+    height: auto;
+}
+
+.right-part{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    height: 100%;
+    width: 50%;
+}
+
+.main-image{
+    max-height: 100%;
+    width: auto; 
+}
+
+/*Responsive Part*/
+
+@media screen and (max-width: 870px){
+
+    .nav{
+        position: fixed;
+        transform: translateX(100%);
+        transition: transform 0.2s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background: hsl(0, 0%, 98%);
+        color: hsl(0, 0%, 41%);
+        list-style: none;
+        padding-top: 4rem;
+      }
+    nav > ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    } 
+    ul > li{
+        margin-bottom: 24px;
+    }
+    .dropdown-content{
+        display: none;
+        position: static;
+        background-color: none;
+
+        background-color: hsl(0, 0%, 98%);
+        box-shadow: none;
+        border-radius: none;
+        transition: visibility 0.5s;
+
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .dropdown-title:hover > .dropdown-content{
+        display: block;
+    }
+    .arrow{
+        padding-left: 4px;
+        transition: transform 200ms ease-out 0.5s;
+    }
+
+    .showNav {
+        transform: translateX(33%) !important;
+    }
+
+    .login-and-register{
+        display: none;
+    }
+    
+    .hamburger{
+        position: absolute;
+        right: 16px;
+        border: none;
+        background-color: hsl(0, 0%, 98%);
+        cursor: pointer;
+        z-index: 2;
+    }
+    .close-menu{
+        display: none;
+    }
+
+    .right-part{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 871px){
+    .hamburger{
+        display: none;
+    }
+    .right-part{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1120px){
+    header{
+        padding-top: 0;
+    }
+
+    .logo{
+        margin-left: 16px;
+    }
+    
+
+    .card{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        overflow: auto;
+
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+    }
+
+    /*Le Bas de la card*/
+    .left-part{
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: none;
+    }
+    .left-part > .main-title, .main-paragraph, .clients{
+        width: 100%;
+    }
+    .left-part > div{
+        margin-bottom: 22px;
+    }
+    .main-title{
+        font-size: 36px;
+        margin-top: 60px;
+        text-align: center;
+    }
+    .main-paragraph{
+        text-align: center;
+        line-height: 27px;
+        letter-spacing: -0.8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: calc(100% - 32px);
+        max-width: 740px;
+    }
+
+    .clients{
+        padding-left: 12px;
+        padding-right: 12px;
+        width: calc(100% - 24px);
+    }
+
+    .client{
+        max-width: 20%;
+        height: auto;
+    }
+
+    /*Le Haut de la card*/
+    .right-part{
+        justify-content: center;
+        align-items: center;
+
+        max-width: 100%;
+        height: auto;
+    }
+    .right-part > * {
+        width: 100%;
+    }
+    .main-image{
+        max-width: 400px;
+        height: auto;
+    }
+}
